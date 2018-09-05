@@ -19,6 +19,9 @@
    Filename: tss_styles.css
 
 */
+/* * {
+    border: 1px solid red;
+} */
 /* HTML and Body Styles */
 html {
     background-color: hsl(27, 72%, 72%);
@@ -79,6 +82,22 @@ aside {
 
 aside blockquote {
     color: rgb(232, 165, 116);
+    margin: 20px 5px;
+    quotes: "\201C""\201D";
+}
+
+aside blockquote::before {
+    content: open-quote;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+aside blockquote::after {
+    content: close-quote;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.6em;
+    font-weight: bold;
 }
 
 /* Navigation Styles */
@@ -88,9 +107,51 @@ nav {
 
 nav>ul {
     line-height: 2em;
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+nav>ul>li.newgroup {
+    margin-top: 20px;
+}
+
+nav>ul>li>a:link,
+nav>ul>li>a:visited {
+    color: rgb(151, 151, 151);
+    text-decoration: none;
+}
+
+nav>ul>li>a:hover,
+nav>ul>li>a:active {
+    color: rgb(255, 167, 4);
+    text-decoration: underline;
 }
 
 /* List Styles */
+article#about_tss ul li:first-of-type {
+    list-style-image: url('runicon.png');
+}
+
+article#about_tss ul li:nth-of-type(2) {
+    list-style-image: url('bikeicon.png');
+}
+
+article#about_tss ul li:last-of-type {
+    list-style-image: url('swimicon.png');
+}
+
+article.syllabus ol {
+    list-style-type: upper-roman;
+}
+
+article.syllabus ol ol {
+    list-style-type: upper-alpha;
+}
+
+article.syllabus ol ol ol {
+    list-style-type: decimal;
+}
+
 /* Footer Styles */
 body>footer address {
     background-color: rgb(222, 128, 60);
